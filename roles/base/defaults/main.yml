@@ -12,7 +12,7 @@ base_users:
     #dotfiles: false
 base_user_groups: ['sudo']
 
-base_dotfiles_url: "https://github.com/Flowm/dotfiles.git"
+# base_dotfiles_url: "https://github.com/RupertAmann/dotfiles.git"
 base_dotfiles_dir: "/home/{{ base_user.name }}/.myconf"
 
 base_sshd: true

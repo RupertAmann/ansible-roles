@@ -7,16 +7,16 @@
 # # 	 User pi
 ---
 - hosts: all
+  pre_tasks:
+    - include_vars:
+        dir: vars
   become: true
   roles:
+    - role: base
+      base_user_groups: ['dialout', 'gpio', 'i2c', 'plugdev', 'spi', 'sudo', 'video']
+      base_hostname: true
     - role: rpi
-    - role: nginx-proxy
     - role: influxdb
     - role: grafana
-    - role: air-pi
-    #- role: homeassistant
-    #- role: nodered
-    #- role: ser2mqtt
-    #- role: ble2mqtt
 
 
