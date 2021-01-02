@@ -1,4 +1,0 @@
----
-nginx_user: www-data
-nginx_conf: "/etc/nginx/nginx.conf"
-nginx_webdir: "/var/www"

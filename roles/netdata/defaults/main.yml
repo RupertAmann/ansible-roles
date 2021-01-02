@@ -1,4 +1,0 @@
----
-netdata_user: netdata
-netdata_fqdn: example.com
-netdata_docker_gid: 999

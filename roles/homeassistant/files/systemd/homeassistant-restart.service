@@ -1,6 +1,0 @@
-[Unit]
-Description=Restart homeassistant
-
-[Service]
-Type=oneshot
-ExecStart=/bin/systemctl try-restart homeassistant.service

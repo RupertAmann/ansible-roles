@@ -1,5 +1,0 @@
----
-- name: Restart mjpg-streamer service
-  systemd:
-    name: mjpg-streamer
-    state: restarted

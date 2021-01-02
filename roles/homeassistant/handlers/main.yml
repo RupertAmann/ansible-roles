@@ -1,5 +1,0 @@
----
-- name: Restart homeassistant service
-  systemd:
-    name: homeassistant
-    state: restarted

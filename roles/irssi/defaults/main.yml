@@ -1,4 +1,0 @@
----
-irssi_user: ""
-irssi_local: "/veldt/vmdata/base/.irssi"
-irssi_remote: "/home/{{ irssi_user }}/.irssi"

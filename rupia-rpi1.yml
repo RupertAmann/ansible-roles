@@ -1,8 +1,8 @@
 # Usage:
-# # ansible-playbook -i "air-pi," air-pi.yml
+# # ansible-playbook -i "rupia-rpi1," rupia-rpi1.yml -bK
 #
 # Needs a corresponding .ssh/config entry:
-# # Host air-pi
+# # Host rupia-rpi1
 # # 	 Hostname <IP of RPI>
 # # 	 User pi
 ---
@@ -18,3 +18,5 @@
     #- role: nodered
     #- role: ser2mqtt
     #- role: ble2mqtt
+
+
