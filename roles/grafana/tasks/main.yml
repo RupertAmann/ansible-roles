@@ -12,6 +12,14 @@
       update_cache: yes
   when: ansible_pkg_mgr == "apt" and (ansible_architecture == "x86_64" or ansible_architecture == "armv7l")
 
+- block:
+  - name: Install Grafana dependencies on armv6l architecture
+    apt:
+      pkg:
+      - adduser 
+      - libfontconfig1
+  when: ansible_pkg_mgr == "apt" and (ansible_architecture == "armv6l")
+
 - name: Install grafana package
   apt:
     name: "{{ packages }}"
@@ -21,6 +29,12 @@
       - grafana
   notify:
     - Restart grafana
+  when: ansible_architecture != "armv6l"
+
+- name: Install Grafana on armv6l architecture
+  apt:
+    deb: https://dl.grafana.com/oss/release/grafana-rpi_7.3.6_armhf.deb
+  when: ansible_pkg_mgr == "apt" and (ansible_architecture == "armv6l")
 
 - name: Set base url for nginx proxy
   lineinfile:
