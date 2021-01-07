@@ -1,3 +1,11 @@
+- name: Configure Port
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: "^#?Port"
+    line: "Port {{ base_sshd_port }}"
+  notify: Restart ssh
+  when: base_sshd_port is defined
+
 - name: Disable empty password login
   lineinfile:
     dest: /etc/ssh/sshd_config
